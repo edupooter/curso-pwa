@@ -25,20 +25,19 @@
 </body>
 
 <script>
-    // $('document').ready(function(){
-    //     blablabla
-    // })
-    // document.addEventListener("DOMContentLoaded", function (event) {
-    //     if ('serviceWorker' in navigator) {
-    //         console.log('has serviceworker');
-    //         window.addEventListener('load', () => {
-    //             navigator.serviceWorker.register('serviceWorker.js')
-    //                 .then((registration) => {
-    //                     console.log('Service worker registered.', registration);
-    //                 });
-    //         });
-    //     }
-    // });
+    document.addEventListener("DOMContentLoaded", function (event) {
+        if ('serviceWorker' in navigator) {
+            console.log('has serviceworker');
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('serviceWorker.js')
+                    .then((registration) => {
+                        console.log('Service worker registered.', registration);
+                    });
+            });
+        } else {
+            console.log("Your browser not supports serviceWorkers");
+        }
+    });
 </script>
 
 </html>
